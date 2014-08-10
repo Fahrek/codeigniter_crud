@@ -41,9 +41,11 @@ class Informes extends CI_Controller {
             $descripcion = $this->input->post('descripcion');
             $prioridad = $this->input->post('prioridad');
             $this->load->model('informe_model');
-            $this->informe_model->guardar($titulo, $descripcion, $prioridad, $id);            
-        }
-        redirect('informes');
+            $this->informe_model->guardar($titulo, $descripcion, $prioridad, $id);
+            redirect('informes');
+        }else{
+            $this->guardar();
+        }        
     }
     public function eliminar($id){
         $this->load->model('informe_model');
