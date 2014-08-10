@@ -27,9 +27,15 @@ class Informes extends CI_Controller {
         $this->load->model('informe_model');
         if($id){
             $informe = $this->informe_model->obtener_por_id($id);            
-            $data['informe'] = $informe;
+            $data['id'] = $informe->id;
+            $data['titulo'] = $informe->titulo;
+            $data['descripcion'] = $informe->descripcion;
+            $data['prioridad'] = $informe->prioridad;
         }else{
-            $data['informe'] = null;
+            $data['id'] = null;
+            $data['titulo'] = null;
+            $data['descripcion'] = null;
+            $data['prioridad'] = null;
         }
         $this->load->view('informes/header');
         $this->load->view('informes/guardar', $data);
