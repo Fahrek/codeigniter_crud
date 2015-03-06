@@ -9,8 +9,8 @@
                 <th> &nbsp; </th>
             </tr>
         </thead>
-        <?php foreach ($informes as $item): ?>
-            <tbody>
+        <tbody>
+            <?php foreach ($informes as $item): ?>    
                 <tr>
                     <td style="width: 35%"> <?php echo $item->titulo ?> </td>
                     <td style="width: 35%"> <?php echo $item->prioridad ?> </td>
@@ -20,8 +20,8 @@
                         <a class="btn btn-danger eliminar_informe" href="<?php echo base_url() ?>informes/eliminar/<?php echo $item->id ?>"> Eliminar </a> 
                     </td>
                 </tr>
-            </tbody>
-        <?php endforeach; ?>
+            <?php endforeach; ?>
+        </tbody>
     </table>
 <?php else: ?>
     <p> No hay informes </p>
